@@ -1,0 +1,41 @@
+$color-primary-500: #000;
+
+$base: 16px;
+$site-width: $base * 96;
+
+$font-weight-normal: 400;
+$font-weight-semibold: 700;
+$font-weight-bold: 700;
+
+$font-size-s: 12px;
+$font-size-s-line: 16px;
+
+$font-size-m: 16px;
+$font-size-m-line: 24px;
+
+$font-size-l: 20px;
+$font-size-l-line: 32px;
+
+$font-size-xl: 24px;
+$font-size-xl-line: 32px;
+
+$font-size-xxl: 28px;
+$font-size-xxl-line: 40px;
+
+$font-size-3xl: 32px;
+$font-size-3xl-line: 40px;
+
+$font-size-4xl: 40px;
+$font-size-4xl-line: 56px;
+
+$border-radius: $base * 0.25;
+
+$transition:150ms; 
+
+:root {
+    --site-padding: #{$base * 2};
+
+    @include breakpoint(m) {
+        --site-padding: #{$base};
+    }
+}

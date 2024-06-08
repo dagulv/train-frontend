@@ -1,0 +1,41 @@
+@mixin breakpoint($breakpoint) {
+
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $breakpoint) {
+
+		// Prints a media query based on the value
+		@media (max-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+
+	// If the key doesn't exist in the map
+	@else {
+		@warn 'No value could be retrieved from `#{$breakpoint}`. '
+		+ 'Available breakpoints are: #{map-keys($breakpoints)}.';
+	}
+  }
+
+  @mixin breakpoint-min($breakpoint) {
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media (min-width: map-get($breakpoints, $breakpoint) + 1px) {
+			@content;
+		}
+	}
+
+	// If the key doesn't exist in the map
+	@else {
+		@warn 'No value could be retrieved from `#{$breakpoint}`. '
+		+ 'Available breakpoints are: #{map-keys($breakpoints)}.';
+	}
+}
+
+$breakpoints: (
+	'xs':  480px,
+	's': 768px,
+	'm':  1024px,
+    'l': 1200px,
+    'xl': 1920px
+) !default;
